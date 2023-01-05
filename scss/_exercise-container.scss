@@ -1,0 +1,17 @@
+.container{
+    width: 1500px;
+    max-width: 100%;
+    margin: 0 auto;
+    min-height: 100vh;
+    padding: 5em 1em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap:1em;
+
+    @include for-tablet-down{
+        grid-template-columns: 1fr 1fr;
+    }
+    @include for-mobile-down{
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,111 @@
+.exercise-container{
+    background-color: $neutral-light-grey;
+    color:$primary-blue;
+    width: 300px;
+    max-width: 100%;
+    padding:0.7rem 1rem;
+    margin:0.5em 0;
+    border-radius: 5px;
+    position: relative;
+    font-size: 0.9rem;
+    box-shadow: 0 5px 5px rgba(black, 0.2);
+    
+    .exercise-title{
+        text-transform: capitalize;
+        cursor: pointer;
+        width: 130px;
+    }
+    .exercise-title:hover{
+        color:rgba(black, 0.4);
+    }
+    .edit-button{
+        position: absolute;
+        padding: 0.8rem 0.7rem;
+        right:0;
+        top:0;
+        height: 100%;
+        border-radius: 0 5px 5px 0;
+        background-color: green;
+        // border-right: 5px solid darkgreen;
+        z-index: 1;
+        cursor: pointer;
+    }
+    .delete-button::before, .edit-button::before{
+        content: attr(data-hover);
+        visibility: hidden;
+        opacity: 0;
+        width: 70px;
+        background-color: black;
+        font-size: 12px;
+        font-weight: 200;
+        border-radius: 5px;
+        color:$neutral-light-grey;
+        text-align: center;
+        padding:0.3em;
+        transition: opacity .5s ease-in-out;
+        position: absolute;
+        z-index: 3;
+        left:0;
+        top:110%;
+    }
+    .delete-button:hover:before, .edit-button:hover:before{
+        opacity: 1;
+        visibility: visible;
+    }
+    .edit-button:hover{
+        color:#fff;
+        content: 'rename';
+    }
+    
+    
+    .delete-button{
+        border: none;
+        position: absolute;
+        padding: 0.9rem 0.7rem;
+        border-radius: 0 5px 5px 0;
+        right:-10px;
+        top:0;
+        height: 100%;
+        opacity: 1;
+        z-index: 0;
+        background-color: red;
+        cursor: pointer;
+        transition: .3s ease-in-out;
+    }
+    .delete-button:hover{
+        transform: translateX(20px);
+        color:#fff;
+    }
+    
+   
+}
+
+
+.easy-container, .medium-container, .intermediate-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h2{
+        padding-bottom :0.3em;
+        border-bottom: 1px solid rgba($neutral-light-grey, 0.2);
+        width: 300px;
+    }
+}
+
+.column-title{
+    position: relative;
+    max-width: 300px;
+    button{
+        position: absolute;
+        right:0px;
+        top:10px;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    button:hover{
+        color:#fff;
+        background-color: rgba($primary-blue, 0.6);
+    }
+}
+
